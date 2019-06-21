@@ -55,6 +55,14 @@ module.exports = {
   },
   modules: ['@nuxtjs/apollo'],
   apollo: {
+    defaultOptions: {
+      // See 'apollo' definition
+      // For example: default query options
+      $query: {
+        loadingKey: 'loading',
+        fetchPolicy: 'cache-and-network',
+      },
+    },
     clientConfigs: {
       default: '~/apollo/client-configs/default.js'
     }
