@@ -11,7 +11,7 @@
     <div v-else-if="error" class="error apollo">An error occurred</div>
 
     <!-- Result -->
-    <div v-else-if="data" class="result apollo">
+    <div v-else-if="data.book != null" class="result apollo">
         <h2>{{ data.book.name }}</h2>
         <p>{{ data.book.genre }}</p>
         <p>{{ data.book.author.name }}</p>
@@ -24,9 +24,8 @@
     </div>
 
     <!-- No result -->
-    <div v-else class="no-result apollo">No result :(</div>
+    <div v-else class="no-result apollo">Click a book to see details..</div>
   </template>
-
 </ApolloQuery>
 </template>
 
@@ -34,8 +33,8 @@
 export default {
     props:{
         bookId:{
-            type: String || Number
+            type: String || Number,
         }
-    },
+    }
 }
 </script>
