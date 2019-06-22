@@ -14,7 +14,7 @@
     <div v-else-if="data.book != null" class="result apollo">
         <h2>{{ data.book.name }}</h2>
         <p>{{ data.book.genre }}</p>
-        <p>{{ data.book.author.name }}</p>
+        <p>{{ data.book.author.name }} : {{ data.book.author.id }}</p>
         <p>All books by this author</p>
         <ul className="other-books">
             <li v-for="book in data.book.author.books" :key="book.id">

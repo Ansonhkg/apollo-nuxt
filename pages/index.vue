@@ -2,7 +2,7 @@
   <div id="main">
     <h2>My Ninja Book List</h2>
     <BookList/>
-    <!-- <AddBook/> -->
+    <AddBook/>
   </div>
 </template>
 
