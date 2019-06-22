@@ -1,4 +1,5 @@
 # How to add Apollo to your Nuxt application
+![landing]
 
 ## Install dependencies by Nuxt community https://github.com/nuxt-community/apollo-module
 ```
@@ -131,3 +132,5 @@ query getBooks{
       })
   }
 ```
+
+[landing]: https://i.gyazo.com/a016457c1796a5768655714008df436e.gif
