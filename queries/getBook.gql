@@ -1,0 +1,16 @@
+query getBook($bookId: ID){
+        book(id: $bookId){
+            id
+            name
+            genre
+            author{
+                id
+                name
+                age
+                books{
+                    id
+                    name
+                }
+            }
+        }
+    }
