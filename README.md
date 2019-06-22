@@ -35,7 +35,7 @@ export default () => ({
 
 ## Vue Component sample
 
-template
+#### template
 ```html
 <template>
   <section class="container">
@@ -44,7 +44,7 @@ template
 </template>
 ```
 
-script
+#### script
 ```js
 import gql from 'graphql-tag'
 
@@ -62,7 +62,13 @@ const getBooksQuery = gql`
 `
 
 export default {
+  data(){
+    return{
+      loading: 0,
+    }
+  },
   apollo:{
+    $loadingKey: 'loading',
     books: {
       query: getBooksQuery
     }
@@ -70,7 +76,7 @@ export default {
 }
 ```
 
-# Example of ApolloQuery component 
+# ApolloQuery Component Sample
 index.vue
 
 ```html
@@ -95,9 +101,9 @@ index.vue
 </template>
 ```
 
-## ./queries/Books.gql
+## ./queries/getBooks.gql
 ```sql
-query Books{
+query getBooks{
     books{
         name
         id
@@ -107,4 +113,21 @@ query Books{
         }
     }
 }
+```
+
+# Apollo Mutation
+```js
+  handleSubmit(){
+      this.$apollo.mutate({
+          mutation: addBook,
+          variables:{
+              name: this.name,
+              genre: this.genre,
+              authorId: this.authorId
+          }
+      }).then(mutationResult => {
+          this.$apollo.queries.books.refresh() // Refetch books query when a new book is added
+          console.log("Book added!")
+      })
+  }
 ```

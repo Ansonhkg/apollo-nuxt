@@ -43,7 +43,6 @@ export default {
     },
     methods:{
         handleSubmit(){
-            console.log(this.$apollo.queries)
             this.$apollo.mutate({
                 mutation: addBook,
                 variables:{

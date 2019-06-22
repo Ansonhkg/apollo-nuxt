@@ -11,7 +11,7 @@
 
     <!-- Result -->
     <div v-else-if="data" class="result apollo">
-      <ul>
+      <ul id="book-list">
         <li @click="setSelected(book.id)" v-for="book in data.books" :key="book.id">
           {{ book.name }} - {{ book.author.name }} ({{book.author.age}})
         </li>
@@ -46,3 +46,19 @@ export default {
 
 }
 </script>
+
+<style>
+#book-list{
+  padding:0px;
+}
+#book-list li{
+  display: inline-block;
+  margin:12px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #880E4F;
+  box-shadow:1px 2px 3px rgba(0,0,0,0.3);
+  cursor:pointer;
+  color:#880E4F;
+}
+</style>

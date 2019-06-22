@@ -17,3 +17,16 @@ export default {
   }
 }
 </script>
+
+<style>
+#main{
+  padding: 0px;
+  box-sizing: border-box;
+  width:60%;
+  height:100%;
+}
+#main h1{
+  color: #444;
+  text-align:center;
+}
+</style>
