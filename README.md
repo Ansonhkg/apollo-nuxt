@@ -85,7 +85,7 @@ index.vue
   <ApolloQuery
   :query="require('../queries/books.gql')"
 >
-  <template v-slot="{ result: { error, data }, isLoading }">
+  <template slot-scope="{ result: { error, data }, isLoading }">
     <!-- Loading -->
     <div v-if="isLoading" class="loading apollo">Loading...</div>
 
